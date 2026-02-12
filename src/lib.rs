@@ -151,6 +151,20 @@ pub fn watch_devices(
     let mut pending: HashMap<String, UsbEvent> = HashMap::new();
     let mut id_to_key: HashMap<String, (String, Option<String>)> = HashMap::new();
 
+    // Pre-populate id_to_key with already-connected devices so that
+    // disconnect events for them can be resolved.
+    if let Ok(existing) = nusb::list_devices().wait() {
+      for info in existing {
+        let device_id = format!("{:?}", info.id());
+        let device = UsbDevice::from_device_info(&info);
+        let key = match &device.serial_number {
+          Some(s) if !s.is_empty() => s.clone(),
+          _ => format!("{}:{}:{}", device.vendor_id, device.product_id, &device_id),
+        };
+        id_to_key.insert(device_id, (key, device.serial_number));
+      }
+    }
+
     // Main debounce loop: block on first event, then collect within window.
     loop {
       // Block until the first event arrives (zero CPU while waiting)
