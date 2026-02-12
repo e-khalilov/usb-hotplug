@@ -1,6 +1,6 @@
 {
   "name": "usb-hotplug",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Cross-platform USB hotplug event listener — native Node.js module powered by Rust and nusb. Zero dependencies, built-in TypeScript types, automatic event debouncing.",
   "main": "index.js",
   "types": "index.d.ts",
