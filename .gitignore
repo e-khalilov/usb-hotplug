@@ -2,4 +2,5 @@
 target/
 node_modules/
 *.node
+npm/*/usb-hotplug.*.node
 dist/

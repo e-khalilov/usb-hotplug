@@ -1,0 +1,46 @@
+{
+  "name": "@e-khalilov/usb-hotplug-win32-x64-msvc",
+  "version": "0.1.0",
+  "cpu": [
+    "x64"
+  ],
+  "main": "usb-hotplug.win32-x64-msvc.node",
+  "files": [
+    "usb-hotplug.win32-x64-msvc.node"
+  ],
+  "description": "Cross-platform USB hotplug event listener — native Node.js module powered by Rust and nusb. Zero dependencies, built-in TypeScript types, automatic event debouncing.",
+  "keywords": [
+    "usb",
+    "hotplug",
+    "device",
+    "native",
+    "napi",
+    "rust",
+    "nusb",
+    "hardware",
+    "connect",
+    "disconnect",
+    "watcher",
+    "cross-platform"
+  ],
+  "author": "",
+  "homepage": "https://github.com/e-khalilov/usb-hotplug#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-khalilov/usb-hotplug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/e-khalilov/usb-hotplug/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "os": [
+    "win32"
+  ]
+}

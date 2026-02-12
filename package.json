@@ -10,6 +10,14 @@
       "default": "./index.js"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-khalilov/usb-hotplug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/e-khalilov/usb-hotplug/issues"
+  },
+  "homepage": "https://github.com/e-khalilov/usb-hotplug#readme",
   "keywords": [
     "usb",
     "hotplug",
@@ -29,6 +37,10 @@
   "engines": {
     "node": ">=16"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "napi": {
     "binaryName": "usb-hotplug",
     "targets": [
@@ -36,12 +48,15 @@
       "x86_64-apple-darwin",
       "x86_64-unknown-linux-gnu",
       "x86_64-pc-windows-msvc"
-    ]
+    ],
+    "package": {
+      "name": "@e-khalilov/usb-hotplug"
+    }
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
+    "build": "napi build --platform --release --js-package-name @e-khalilov/usb-hotplug",
+    "build:debug": "napi build --platform --js-package-name @e-khalilov/usb-hotplug",
     "prepublishOnly": "napi prepublish -t npm",
     "version": "napi version"
   },
