@@ -44,15 +44,13 @@
   },
   "napi": {
     "binaryName": "usb-hotplug",
+    "packageName": "@e-khalilov/usb-hotplug",
     "targets": [
       "aarch64-apple-darwin",
       "x86_64-apple-darwin",
       "x86_64-unknown-linux-gnu",
       "x86_64-pc-windows-msvc"
-    ],
-    "package": {
-      "name": "@e-khalilov/usb-hotplug"
-    }
+    ]
   },
   "scripts": {
     "artifacts": "napi artifacts",
