@@ -39,7 +39,8 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "napi": {
     "binaryName": "usb-hotplug",
@@ -70,9 +71,9 @@
     "README.md"
   ],
   "optionalDependencies": {
-    "usb-hotplug-darwin-arm64": "0.1.1",
-    "usb-hotplug-darwin-x64": "0.1.1",
-    "usb-hotplug-linux-x64-gnu": "0.1.1",
-    "usb-hotplug-win32-x64-msvc": "0.1.1"
+    "@e-khalilov/usb-hotplug-darwin-arm64": "0.1.1",
+    "@e-khalilov/usb-hotplug-darwin-x64": "0.1.1",
+    "@e-khalilov/usb-hotplug-linux-x64-gnu": "0.1.1",
+    "@e-khalilov/usb-hotplug-win32-x64-msvc": "0.1.1"
   }
 }
