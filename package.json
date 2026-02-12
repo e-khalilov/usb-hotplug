@@ -59,7 +59,7 @@
     "build": "napi build --platform --release --js-package-name @e-khalilov/usb-hotplug",
     "build:debug": "napi build --platform --js-package-name @e-khalilov/usb-hotplug",
     "prepublishOnly": "napi prepublish -t npm --no-gh-release",
-    "version": "napi version"
+    "version": "napi version && git add npm/"
   },
   "devDependencies": {
     "@napi-rs/cli": "^3.0.0"
