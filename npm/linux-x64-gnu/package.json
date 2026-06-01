@@ -1,6 +1,6 @@
 {
   "name": "@e-khalilov/usb-hotplug-linux-x64-gnu",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "cpu": [
     "x64"
   ],

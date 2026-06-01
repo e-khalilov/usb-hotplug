@@ -1,6 +1,6 @@
 {
   "name": "usb-hotplug",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "Cross-platform USB hotplug event listener — native Node.js module powered by Rust and nusb. Zero dependencies, built-in TypeScript types, automatic event debouncing.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -69,9 +69,9 @@
     "README.md"
   ],
   "optionalDependencies": {
-    "@e-khalilov/usb-hotplug-darwin-arm64": "0.1.1",
-    "@e-khalilov/usb-hotplug-darwin-x64": "0.1.1",
-    "@e-khalilov/usb-hotplug-linux-x64-gnu": "0.1.1",
-    "@e-khalilov/usb-hotplug-win32-x64-msvc": "0.1.1"
+    "@e-khalilov/usb-hotplug-darwin-arm64": "1.0.0",
+    "@e-khalilov/usb-hotplug-darwin-x64": "1.0.0",
+    "@e-khalilov/usb-hotplug-linux-x64-gnu": "1.0.0",
+    "@e-khalilov/usb-hotplug-win32-x64-msvc": "1.0.0"
   }
 }
