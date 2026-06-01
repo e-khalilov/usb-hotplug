@@ -14,6 +14,8 @@ on:
     paths-ignore:
       - "**/*.md"
       - LICENSE
+  release:
+    types: [published]
   pull_request: null
 
 concurrency:
@@ -116,10 +118,10 @@ jobs:
 
       - name: Publish
         run: |
-          if git log -1 --pretty=%B | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+$";
+          if [ "${{ github.event_name }}" = "release" ] || git log -1 --pretty=%B | grep -q "^[0-9]\+\.[0-9]\+\.[0-9]\+$";
           then
             npm publish --access public --provenance
-          elif git log -1 --pretty=%B | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+";
+          elif git log -1 --pretty=%B | grep -q "^[0-9]\+\.[0-9]\+\.[0-9]\+";
           then
             npm publish --tag next --access public --provenance
           else
