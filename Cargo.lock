@@ -426,7 +426,7 @@ checksum = "f6ccf251212114b54433ec949fd6a7841275f9ada20dddd2f29e9ceea4501493"
 
 [[package]]
 name = "usb-hotplug"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "futures-lite",
  "napi",
