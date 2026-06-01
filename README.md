@@ -78,13 +78,32 @@ interface UsbDevice {
   manufacturer?: string
   product?: string
   serialNumber?: string
-  deviceClass: number
+  deviceClass: number       // raw bDeviceClass; 0 for HID/composite devices (see note)
   deviceSubclass: number
   deviceProtocol: number
   busId: string
   deviceAddress: number
+  interfaces: UsbInterface[] // per-interface class info (the real function class)
+}
+
+interface UsbInterface {
+  interfaceNumber: number
+  class: number
+  subclass: number
+  protocol: number
+  interfaceString?: string
 }
 ```
+
+> **Note on `deviceClass`**
+>
+> The device-level `deviceClass` (`bDeviceClass` in the USB spec) is
+> legitimately `0x00` for HID and composite devices -- keyboards, trackpads,
+> mice, iPhones, etc. A value of `0x00` means the class is declared
+> *per-interface*, not at the device level. To determine what such a device
+> actually is, read `interfaces[].class` (e.g. `0x03` = HID, `0x06` =
+> still-image/PTP, `0xFF` = vendor-specific). On Windows, `interfaces` may be
+> empty for non-composite devices bound to a single driver.
 
 ## Platform support
 

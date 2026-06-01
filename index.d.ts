@@ -15,11 +15,21 @@ export interface UsbDevice {
   manufacturer?: string
   product?: string
   serialNumber?: string
+  /**
+   * Raw `bDeviceClass` from the device descriptor. This is legitimately
+   * `0x00` for HID and composite devices, which declare their class
+   * per-interface. Inspect `interfaces` for the actual function class.
+   */
   deviceClass: number
   deviceSubclass: number
   deviceProtocol: number
   busId: string
   deviceAddress: number
+  /**
+   * Interfaces in the device's active configuration. May be empty on
+   * Windows for non-composite devices bound to a single driver.
+   */
+  interfaces: Array<UsbInterface>
 }
 
 export interface UsbEvent {
@@ -32,6 +42,22 @@ export interface UsbEvent {
 export declare const enum UsbEventType {
   Connected = 'Connected',
   Disconnected = 'Disconnected'
+}
+
+/**
+ * Summary information about a single USB interface, taken from the
+ * interface descriptor of the device's active configuration.
+ *
+ * This is where the real device function class lives for HID and
+ * composite devices (keyboards, trackpads, iPhones, etc.), whose
+ * device-level `bDeviceClass` is `0x00` per the USB specification.
+ */
+export interface UsbInterface {
+  interfaceNumber: number
+  class: number
+  subclass: number
+  protocol: number
+  interfaceString?: string
 }
 
 /**

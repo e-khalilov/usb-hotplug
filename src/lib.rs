@@ -12,7 +12,7 @@ use std::sync::{Arc, Mutex, OnceLock};
 use std::thread::JoinHandle;
 use std::time::{Duration, Instant};
 
-pub use types::{UsbDevice, UsbEvent, UsbEventType};
+pub use types::{UsbDevice, UsbEvent, UsbEventType, UsbInterface};
 
 const DEFAULT_DEBOUNCE_MS: u32 = 500;
 
